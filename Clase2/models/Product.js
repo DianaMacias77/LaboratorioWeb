@@ -18,3 +18,34 @@ exports.all = () => {
     .select('*')
     .from('products');
 }
+
+// models/Products.js
+// ...
+// Almacen en la base de datos el producto
+exports.create = (product) => {
+  return knex('products')
+    .insert({
+      name: product.name,
+      price: product.price,
+      description: product.description
+    });
+}
+
+// models/Product.js
+
+// ...
+
+// Obtiene la información de un producto por su id
+exports.find = (id) => {
+  return knex
+    .select('*')
+    .from('products')
+    .where('id', id)
+    .first();
+}
+
+exports.delete = (id) => {
+  return knex('products')
+    .delete()
+    .where('id', id);
+}

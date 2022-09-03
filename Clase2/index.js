@@ -26,3 +26,9 @@ app.set('view engine', extNameHbs);
 app.listen(3000,() => {
   console.log('App listening on port 3000! (http://localhost:3000)');
 });
+// index.js
+// Importa el modulo para leer el input del usuario
+let bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// ...
