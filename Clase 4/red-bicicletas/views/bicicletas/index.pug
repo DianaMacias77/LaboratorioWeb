@@ -1,18 +1,5 @@
 extends ../layout 
 
 block content
-    table.table 
-        thread 
-            tr 
-                th ID 
-                th Color 
-                th Modelo 
-                th Ubicación  
-        tbody 
-            each bici in bicis 
-                tr 
-                    td=bici.id 
-                    td=bici.color 
-                    td=bici.modelo 
-                    td=bici.ubicacion 
-    a(href='/') Home
+
+    bicis
