@@ -39,4 +39,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+var bicicletasAPIRouter = require('./routes/api/bicicletas');
+app.use('/api/bicicletas',bicicletasAPIRouter);
+
 module.exports = app;

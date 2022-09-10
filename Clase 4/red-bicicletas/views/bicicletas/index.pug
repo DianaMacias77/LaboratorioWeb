@@ -1,5 +1,30 @@
 extends ../layout 
 
 block content
+    table.table 
+        thread 
+            tr 
+                th ID 
+                th Color 
+                th Modelo 
+                th Ubicación  
+        tbody 
+            each bici in bicis 
+                tr 
+                    td= bici.id 
+                    td= bici.color 
+                    td= bici.modelo 
+                    td= bici.ubicacion 
+                    td 
+                        form.inline(method='post' action='/bicicletas/' + bici.id + '/delete')
+                            input(type='hidden' name='id' value= bici.id)
+                            button.link-button(type='submit' name='submit_param' value='submit_value' class='btn')
+                                = 'Eliminar'
+                    td 
+                        a(href='bicicletas/'+bici.id+'/update') Editar
+    a(href='/') Home
+    <br>
+    a(href='bicicletas/create') Añadir bicicleta
 
-    bicis
+    script(src='javascripts/jquery-3.6.0.min.js')
+    script(src='javascripts/map.js')
